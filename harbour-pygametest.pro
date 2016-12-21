@@ -16,11 +16,10 @@ CONFIG += sailfishapp
 
 SOURCES += src/harbour-pygametest.cpp
 
-OTHER_FILES += qml/harbour-pygametest.qml \
-    qml/cover/CoverPage.qml \
-    rpm/harbour-pygametest.changes.in \
-    rpm/harbour-pygametest.spec \
+OTHER_FILES += rpm/harbour-pygametest.spec \
     rpm/harbour-pygametest.yaml \
+    start.sh \
+    stop.sh \
     translations/*.ts \
     harbour-pygametest.desktop
 
