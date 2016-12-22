@@ -31,20 +31,19 @@
 #ifdef QT_QML_DEBUG
 #include <QtQuick>
 #endif
+#include <QProcess>
 
 #include <sailfishapp.h>
 
 
 int main(int argc, char *argv[])
 {
-    // SailfishApp::main() will display "qml/template.qml", if you need more
-    // control over initialization, you can use:
-    //
-    //   - SailfishApp::application(int, char *[]) to get the QGuiApplication *
-    //   - SailfishApp::createView() to get a new QQuickView * instance
-    //   - SailfishApp::pathTo(QString) to get a QUrl to a resource file
-    //
-    // To display the view, call "show()" (will show fullscreen on device).
-
-    return SailfishApp::main(argc, argv);
+    QProcess game;
+    game.start("/bin/sh",QStringList() << "/usr/share/harbour-pygametest/start.sh");
+    game.waitForFinished(-1);
+    QGuiApplication* app = SailfishApp::application(argc, argv);
+    QQuickView* view = SailfishApp::createView();
+    QObject::connect(view->engine(), SIGNAL(quit()), app, SLOT(quit()));
+    view->show();
+    return app->exec();
 }

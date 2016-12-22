@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Icon=harbour-pygametest
-Exec=/usr/share/harbour-pygametest/start.sh
+Exec=sh /usr/share/harbour-pygametest/start.sh
 Terminal=false
 Name=PyGameTest
 # translation example:

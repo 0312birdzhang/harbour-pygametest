@@ -12,6 +12,11 @@
 # The name of your application
 TARGET = harbour-pygametest
 
+sh.path = /usr/share/$$TARGET
+sh.files += start.sh \
+            stop.sh
+INSTALLS += sh
+            
 CONFIG += sailfishapp
 
 SOURCES += src/harbour-pygametest.cpp
